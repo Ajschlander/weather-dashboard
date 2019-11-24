@@ -3,6 +3,13 @@ html, body {
   margin: 0;
 }
 
+hr{
+  width: 500px;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 
 .parallax {
@@ -17,6 +24,107 @@ html, body {
 .title-name{
   font-family: 'Merriweather', serif;
   margin: 0;
-  color: white;
+  color: #FFFAFA;
   text-shadow: 2px 2px 4px #000000;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 56px;
+}
+
+.buscar-caja {
+ position: absolute;
+ left: 14%;
+ top: 31%;
+ transform: translate(-50%, -50%);
+ background: #2f3640;
+ height: 40px;
+ border-radius: 40px;
+ padding: 10px;
+}
+
+.buscar-caja:hover > .buscar-txt {
+ width: 240px;
+ padding: 0 6px;
+}
+
+.buscar-caja:hover > .buscar-btn {
+ background: white;
+ color: #2f3640;
+}
+
+.buscar-btn {
+ color: #e84118;
+ float: right;
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ background: #2f3640;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ transition: 0.4s;
+ color: white;
+ cursor: pointer;
+}
+
+.buscar-btn > i {
+ font-size: 30px;
+}
+
+.buscar-txt {
+ border: none;
+ background: none;
+ outline: none;
+ float: left;
+ padding: 0;
+ color: white;
+ font-size: 16px;
+ transition: 0.4s;
+ line-height: 40px;
+ width: 0px;
+ font-weight: bold;
+}
+
+/* Main content css */
+
+.main-container{
+  display: inline-flex;
+}
+
+.search-container{
+  float: left;
+  padding: 2rem;
+  width: 25%;
+  background: white;
+  border-radius: 4px;
+}
+
+.search-title{
+  color: #2f3640;
+  text-align: center;
+  font-size: 32px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.search-history{
+  margin-top: 7rem;
+}
+
+.current-weather-container{
+  background: white;
+  border-radius: 4px;
+  width: 65%;
+  float: right;
+}
+
+.city-name{
+  text-align: left;
+  padding-left: 5%;
+  color: #2f3640;
+  font-size: 28px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.forecast-container{
+
 }
