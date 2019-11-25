@@ -19,7 +19,7 @@ const getCurrentWeather = () => {
     newH3.innerHTML = response.data.name;
     const imgIcon = document.createElement("img");
     const iconcode = response.data.weather[0].icon;
-    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+    var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
     imgIcon.setAttribute("src", iconurl);
     newH3.append(imgIcon);
     currentWeatherDiv.append(newH3);
@@ -39,8 +39,20 @@ const getCurrentWeather = () => {
     windP.classList.add("current-data");
     windP.innerHTML = "Wind Speed: " + response.data.wind.speed + " MPH";
     currentWeatherDiv.append(windP);
-    // Get current UV index (do you have to grab the coords from the json object?)
-
+    // Grab the lat and lon coords from the json object
+    const lat = response.data.coord.lat;
+    const lon = response.data.coord.lon;
+    const queryUVURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIkey + "&lat=" + lat + "&lon=" + lon;
+    // New call to grab the UV index
+    axios.get(queryUVURL)
+    .then(function(response){
+      console.log(response.data);
+      // Create a new p tag with a class of current-data and add it to the div of the current weather with the uv index
+      const uvIndexP = document.createElement("p");
+      uvIndexP.classList.add("current-data");
+      uvIndexP.innerHTML = "UV Index: " + response.data.value;
+      currentWeatherDiv.append(uvIndexP);
+    });
   });
 
 
