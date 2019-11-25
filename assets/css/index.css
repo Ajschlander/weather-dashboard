@@ -97,6 +97,7 @@ hr{
   width: 25%;
   background: white;
   border-radius: 4px;
+  box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
 }
 
 .search-title{
@@ -115,6 +116,7 @@ hr{
   border-radius: 4px;
   width: 65%;
   float: right;
+  box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
 }
 
 .city-name{
@@ -128,7 +130,7 @@ hr{
 .current-data{
   color: #2f3640;
   padding-left: 2rem;
-  font-size: 16px;
+  font-size: 20px;
   font-family: 'Libre Baskerville', serif;
 }
 
