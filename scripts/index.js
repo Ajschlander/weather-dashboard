@@ -1,12 +1,15 @@
 const searchBtn = document.getElementById('search-button');
 const currentWeatherDiv = document.getElementById('current-weather-div');
+const forecastWeatherDiv = document.getElementById('forecast-we');
 let cityInput = document.getElementById('search-input');
 
-const getCurrentWeather = () => {
 
-  const APIkey = "ff74d3c9ca5275d0eae234af4f58526d";
+const APIkey = "ff74d3c9ca5275d0eae234af4f58526d";
+let queryURL;
+
+const getCurrentWeather = () => {
   cityInput = document.getElementById('search-input').value;
-  const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&appid=" + APIkey;
+  queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&appid=" + APIkey;
 
   axios.get(queryURL)
   .then(function(response){
@@ -46,7 +49,6 @@ const getCurrentWeather = () => {
     // New call to grab the UV index
     axios.get(queryUVURL)
     .then(function(response){
-      console.log(response.data);
       // Create a new p tag with a class of current-data and add it to the div of the current weather with the uv index
       const uvIndexP = document.createElement("p");
       uvIndexP.classList.add("current-data");
@@ -54,8 +56,7 @@ const getCurrentWeather = () => {
       currentWeatherDiv.append(uvIndexP);
     });
   });
-
-
+  getForecast();
 }
 
 const clearCurrentWeather = () => {
@@ -66,7 +67,12 @@ const clearCurrentWeather = () => {
 }
 
 const getForecast = () => {
-
+  queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&appid=" + APIkey;
+  axios.get(queryURL)
+  .then(function(response){
+    console.log(response.data);
+    // Create a new div with a styling class and append it to the forecast div
+  });
 }
 
 const updateSearchHistory = () => {

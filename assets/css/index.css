@@ -134,5 +134,9 @@ hr{
 }
 
 .forecast-container{
-
+  background: white;
+  border-radius: 4px;
+  width: 65%;
+  float: right;
+  font-family: 'Libre Baskerville', serif;
 }
