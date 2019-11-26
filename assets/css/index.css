@@ -117,6 +117,7 @@ hr{
   font-family: 'Libre Baskerville', serif;
   border-radius: 12px;
   background: lightGrey;
+  cursor: pointer;
 }
 
 .current-weather-container{
@@ -143,9 +144,22 @@ hr{
 }
 
 .forecast-container{
+  margin-top: 3rem;
   background: white;
   border-radius: 4px;
   width: 65%;
   float: right;
   font-family: 'Libre Baskerville', serif;
+  box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+  display: inline-flex;
+}
+
+.forecast-card{
+  margin-left: 1rem;
+  border-radius: 6px;
+  background: #87ceeb;
+  box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+  padding: .5rem;
+  margin: 1rem;
+  color: white;
 }
