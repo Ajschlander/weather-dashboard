@@ -152,6 +152,7 @@ hr{
   font-family: 'Libre Baskerville', serif;
   box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
   display: inline-flex;
+  justify-content: space-between;
 }
 
 .forecast-card{
